@@ -1,4 +1,6 @@
 import java.lang.Math;
+import java.util.LinkedList;
+
 interface IBinTree {
     // determines whether element is in the tree
     boolean hasElt(int e);
@@ -6,5 +8,14 @@ interface IBinTree {
     int size();
     // returns depth of longest branch in the tree
     int height();
+
+    boolean isHeap();
+
+    boolean isEmpty();
+
+    LinkedList<Integer> flatten();
+
+    boolean validRoot(int elt);
+
 }
 

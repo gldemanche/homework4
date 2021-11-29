@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Objects;
+
 class DataBT implements IBinTree {
     int data;
     IBinTree left;
@@ -25,5 +28,26 @@ class DataBT implements IBinTree {
     // adds 1 to the height of the taller subtree
     public int height() {
         return 1 + Math.max(this.left.height(), this.right.height());
+    }
+
+    public boolean isEmpty() {
+        return false;
+    }
+
+    public boolean validRoot(int elt) {
+        return this.data>= elt;
+    }
+
+    public boolean isHeap(){
+        if(this.left.isEmpty() && this.right.isEmpty()){
+            return true;
+        }
+        else return this.left.validRoot(this.data) && this.right.validRoot(this.data) &&
+                this.left.isHeap() && this.right.isHeap();
+
+    }
+
+    public LinkedList<Integer> flatten() {
+        return null;
     }
 }
