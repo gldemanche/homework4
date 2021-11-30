@@ -1,6 +1,3 @@
-import java.util.LinkedList;
-import java.util.Objects;
-
 class DataBT implements IBinTree {
     int data;
     IBinTree left;
@@ -34,6 +31,8 @@ class DataBT implements IBinTree {
         return false;
     }
 
+
+
     public boolean validRoot(int elt) {
         return this.data>= elt;
     }
@@ -47,7 +46,46 @@ class DataBT implements IBinTree {
 
     }
 
-    public LinkedList<Integer> flatten() {
-        return null;
+
+    public int countOccurrences(int aVal) {
+        if(aVal == data){
+            return 1 + left.countOccurrences(aVal) + right.countOccurrences(aVal);
+        }
+        else{
+            return left.countOccurrences(aVal) + right.countOccurrences(aVal);
+        }
+    }
+
+    public boolean validAdd(int added, IBinTree otherTree) {
+        if(this.data == added && otherTree.countOccurrences(this.data) != (this.countOccurrences(this.data) +1)) {
+            return false;
+        }
+        else {
+            return (this.countOccurrences(this.data) == otherTree.countOccurrences(this.data)) &&
+                    left.validAdd(added, otherTree) && right.validAdd(added, otherTree);
+        }
+    }
+
+    public boolean validRemove(int removed, IBinTree otherTree) {
+        if(this.data == removed && otherTree.countOccurrences(this.data) != (this.countOccurrences(this.data) -1)){
+            return false;
+        }
+        else {
+            return (this.countOccurrences(this.data) == otherTree.countOccurrences(this.data)) &&
+                    left.validAdd(removed, otherTree) && right.validAdd(removed, otherTree);
+        }
+    }
+
+    public boolean sameSizeAdd(IBinTree otherTree) {
+        return otherTree.size() == this.size() +1;
+    }
+
+    public boolean sameSizeRemove(IBinTree otherTree){
+        return otherTree.size() == this.size() -1;
+    }
+
+
+    public int getTop() {
+        return this.data;
     }
 }

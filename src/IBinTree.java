@@ -13,9 +13,22 @@ interface IBinTree {
 
     boolean isEmpty();
 
-    LinkedList<Integer> flatten();
-
     boolean validRoot(int elt);
+
+    int countOccurrences(int aVal);
+
+    boolean validAdd(int added, IBinTree otherTree);
+
+    boolean validRemove(int removed, IBinTree otherTree);
+
+    boolean sameSizeAdd(IBinTree otherTree);
+
+    boolean sameSizeRemove(IBinTree otherTree);
+
+    int getTop();
+
+
+
 
 }
 

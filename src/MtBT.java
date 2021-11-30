@@ -19,9 +19,6 @@ class MtBT implements IBinTree {
         return true;
     }
 
-    public LinkedList<Integer> flatten() {
-        return new LinkedList<>();
-    }
 
     public boolean isEmpty(){
         return true;
@@ -29,5 +26,29 @@ class MtBT implements IBinTree {
 
     public boolean validRoot(int elt) {
         return true;
+    }
+
+    public int countOccurrences(int aVal) {
+        return 0;
+    }
+
+    public boolean validAdd(int added, IBinTree otherTree) {
+        return true;
+    }
+
+    public boolean validRemove(int removed, IBinTree otherTree) {
+        return true;
+    }
+
+    public boolean sameSizeAdd(IBinTree otherTree) {
+        return true;
+    }
+
+    public boolean sameSizeRemove(IBinTree otherTree) {
+        return true;
+    }
+
+    public int getTop() {
+        return 0;
     }
 }

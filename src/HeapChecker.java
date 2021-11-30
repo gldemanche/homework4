@@ -1,11 +1,9 @@
 public class HeapChecker {
     boolean addEltTester(IHeap hOrig, int elt, IBinTree hAdded) {
-        return false;
+        return (hOrig.isHeap() && hAdded.isHeap()) &&  hOrig.validAdd(elt, hAdded) && hOrig.sameSizeAdd(hAdded);
     }
-      //  ... code to compare hOrig and hAdded around the addition of elt as appropriate...
 
     boolean remMinEltTester(IHeap hOrig, IBinTree hRemoved) {
-        return false;
+        return (hOrig.isHeap() && hRemoved.isHeap()) &&  hOrig.validRemove(hOrig.getTop(), hRemoved) && hOrig.sameSizeRemove(hRemoved);
     }
-     // ... code to compare hOrig and hRemoved as appropriate ...
 }
