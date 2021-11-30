@@ -21,6 +21,8 @@ interface IBinTree {
 
     boolean validRemove(int removed, IBinTree otherTree);
 
+    boolean validRemoveAfter(int removed, IBinTree otherTree);
+
     boolean sameSizeAdd(IBinTree otherTree);
 
     boolean sameSizeRemove(IBinTree otherTree);

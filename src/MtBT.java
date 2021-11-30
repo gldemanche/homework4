@@ -39,7 +39,9 @@ class MtBT implements IBinTree {
     public boolean validRemove(int removed, IBinTree otherTree) {
         return true;
     }
-
+    public boolean validRemoveAfter(int removed, IBinTree otherTree) {
+        return true;
+    }
     public boolean sameSizeAdd(IBinTree otherTree) {
         return true;
     }
