@@ -88,6 +88,10 @@ class DataBT implements IBinTree {
         if(this.data == added && otherTree.countOccurrences(this.data) != (this.countOccurrences(this.data) +1)) {
             return false;
         }
+        else if(this.data == added){
+            return (this.countOccurrences(this.data) +1 == otherTree.countOccurrences(this.data)) &&
+                    left.validAddAfter(added, otherTree) && right.validAddAfter(added, otherTree);
+        }
         else {
             return (this.countOccurrences(this.data) == otherTree.countOccurrences(this.data)) &&
                     left.validAdd(added, otherTree) && right.validAdd(added, otherTree);
@@ -112,6 +116,20 @@ class DataBT implements IBinTree {
         else{
             return (this.countOccurrences(this.data) == otherTree.countOccurrences(this.data)) &&
                     left.validRemove(removed, otherTree) && right.validRemove(removed, otherTree);
+        }
+    }
+
+    public boolean validAddAfter(int added, IBinTree otherTree) {
+        if(this.data == added && otherTree.countOccurrences(this.data) != (this.countOccurrences(this.data) +1)) {
+            return false;
+        }
+        else if(this.data == added){
+            return (this.countOccurrences(this.data) +1 == otherTree.countOccurrences(this.data)) &&
+                    left.validAddAfter(added, otherTree) && right.validAddAfter(added, otherTree);
+        }
+        else {
+            return (this.countOccurrences(this.data) == otherTree.countOccurrences(this.data)) &&
+                    left.validAdd(added, otherTree) && right.validAdd(added, otherTree);
         }
     }
 
